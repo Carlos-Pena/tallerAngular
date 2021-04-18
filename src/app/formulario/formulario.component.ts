@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FormularioComponent implements OnInit {
 
   @Output() resultado = new EventEmitter<number>();
-  operandoA:number= 0;
-  operandoB:number = 0;
+  operandoA:number;
+  operandoB:number;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,8 +18,6 @@ export class FormularioComponent implements OnInit {
   sumar(){
     let suma = this.operandoA+ this.operandoB;
     this.resultado.emit(suma);
-    this.operandoB = 0;
-    this.operandoA = 0;
   }
 
 }
